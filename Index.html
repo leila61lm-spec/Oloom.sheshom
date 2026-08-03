@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>سفر شگفت‌انگیز به سرزمین علوم ششم</title>
+<style>
+:root{--ink:#17324d;--blue:#1769aa;--gold:#e9a23b;--bg:#f6fbff;--card:#fff;--line:#dce8ef;--ok:#2f9e72}
+*{box-sizing:border-box}body{margin:0;font-family:Tahoma,Arial,sans-serif;color:var(--ink);background:linear-gradient(135deg,#f6fbff,#fbfdf9);line-height:2}
+header{position:sticky;top:0;z-index:5;background:#fff;border-bottom:1px solid var(--line);padding:10px;text-align:center}
+nav{display:flex;gap:7px;flex-wrap:wrap;justify-content:center}button,.btn{border:0;border-radius:12px;padding:9px 14px;background:#edf5fb;color:var(--ink);cursor:pointer;font:inherit;font-weight:bold}button:hover{transform:translateY(-1px)}.primary{background:var(--blue);color:#fff}
+main{max-width:1150px;margin:auto;padding:20px}.section{display:none}.section.active{display:block}
+.hero,.card,.sim{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:24px;margin-bottom:18px;box-shadow:0 8px 25px rgba(23,50,77,.06)}
+.hero{background:linear-gradient(135deg,#eaf7ff,#fff8e8)}h1{font-size:clamp(28px,5vw,48px);margin:5px 0}.badge{display:inline-block;background:#fff0cf;padding:5px 12px;border-radius:20px;font-weight:bold}
+input,select{padding:11px;border:1px solid #cbdbe5;border-radius:10px;font:inherit;width:100%;margin:5px 0}.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:8px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:15px}.stat{background:#fff;border:1px solid var(--line);border-radius:16px;padding:12px;text-align:center}.stat b{display:block;font-size:25px;color:var(--blue)}
+.map{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.stop{background:#fff;border:2px solid var(--line);border-radius:20px;padding:16px;text-align:center;cursor:pointer;transition:.2s}.stop:hover{border-color:#8bbbd9;transform:translateY(-4px)}.icon{font-size:38px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}.choice{margin:4px}.feedback{font-weight:bold}
+.sim{background:#f8fbff}.layers{display:grid;gap:6px}.layer{padding:14px;text-align:center;border-radius:10px;font-weight:bold;cursor:pointer}.crust{background:#ead3a5}.mantle{background:#f1b47a}.outer{background:#e58d75}.inner{background:#d86663}
+.spring{font-size:42px;text-align:center;transition:.3s}.micro{width:170px;height:170px;border-radius:50%;margin:15px auto;border:12px solid #334e68;background:radial-gradient(circle,#d9f2d0 0 20%,#8fcf91 21% 30%,#f0d6a0 31% 45%,#d7ebf7 46%);transition:.3s}
+.eco{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.eco div{padding:14px;text-align:center;background:#fff;border:2px solid var(--line);border-radius:15px;cursor:pointer}.eco .sel{border-color:var(--ok);background:#e9f8f0}
+.timeline{display:flex;gap:10px;overflow:auto}.time{min-width:170px;padding:15px;background:#fff;border:1px solid var(--line);border-radius:15px}
+.cert{display:none;text-align:center;background:#fffef4;border:8px double #d6ad55;border-radius:20px;padding:30px}.certname{font-size:26px;font-weight:bold}
+small,.muted{color:#60788b}.notice{padding:14px;border-radius:14px;background:#f7fbff;border:1px solid var(--line)}
+@media(max-width:750px){.map{grid-template-columns:repeat(2,1fr)}.stats{grid-template-columns:repeat(2,1fr)}.eco{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:450px){.map{grid-template-columns:1fr}}
+
+.author-box{margin:10px auto 18px;padding:12px 16px;max-width:650px;text-align:center;border:2px solid #dce8ef;border-radius:18px;background:#fff8e8;color:#17324d}
+.info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:14px}
+.info-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:15px}
+.visual{font-size:52px;text-align:center;padding:8px}
+.data{width:100%;border-collapse:collapse;margin-top:12px;background:#fff}
+.data th,.data td{border:1px solid var(--line);padding:9px;text-align:right;vertical-align:top}
+.data th{background:#eaf7ff}
+.layer-list{display:grid;gap:8px}
+.layer-item{padding:12px;border-radius:14px;border:1px solid var(--line)}
+.microscope-diagram{position:relative;max-width:360px;height:270px;margin:12px auto;background:#f8fbff;border:2px solid var(--line);border-radius:20px}
+.microscope-diagram div{position:absolute;font-weight:bold;background:#fff;padding:5px 8px;border-radius:8px;border:1px solid var(--line)}
+.mic-eyepiece{left:145px;top:10px}.mic-objective{left:105px;top:95px}.mic-stage{left:100px;top:145px}.mic-light{left:130px;top:205px}.mic-base{left:100px;top:235px}.mic-body{left:135px;top:45px;font-size:46px;background:transparent!important;border:0!important}
+.mission{margin:10px 0 18px;padding:12px 16px;border-radius:16px;background:#fff8e8;border:2px dashed var(--line)}.mission h3{margin-top:0}</style>
+</head>
+<body>
+<header>
+<nav>
+<button onclick="show('home')">🏠 خانه</button><button onclick="show('research')">🔎 تحقیق</button><button onclick="show('paper')">📄 کاغذ</button>
+<button onclick="show('acids')">🧪 اسیدها</button><button onclick="show('earth')">🌍 زمین</button><button onclick="show('forces')">💪 نیرو</button>
+<button onclick="show('energy')">⚡ انرژی</button><button onclick="show('micro')">🔬 میکروسکوپ</button><button onclick="show('cells')">🍃 سلول</button>
+<button onclick="show('forest')">🌳 اکوسیستم</button><button onclick="show('health')">🛡️ سلامت</button><button onclick="show('communication')">📡 ارتباطات</button>
+<button onclick="show('lab')">🧪 آزمایشگاه</button><button onclick="show('quiz')">🎯 آزمون</button><button onclick="show('refs')">📚 منابع</button><button onclick="show('cert')">📜 گواهی</button>
+</nav>
+</header>
+<main>
+<section id="home" class="section active">
+<div class="hero"><span class="badge">🏆  علوم تجربی پایه ششم</span><h1>🌟 سفر شگفت‌انگیز به سرزمین علوم</h1><div class='author-box'><b>طراح و سازنده: لیلا مهدیزاده</b><br><b>مدرسه: شیخ صفی ۲ (ناحیه ۲ اردبیل)</b></div>
+<p>یک سفر تعاملی برای کشف مفاهیم علوم ششم؛ همراه با بازی، آزمایشگاه مجازی، امتیاز، نشان‌های علمی و گواهی پایان سفر.</p>
+<div class="fields"><input id="student" value="لیلا مهدیزاده" placeholder="نام و نام خانوادگی"><input id="school" value="شیخ صفی ۲ (ناحیه ۲ اردبیل)" placeholder="نام مدرسه"><input id="teacher" placeholder="نام آموزگار"></div>
+<div class="stats"><div class="stat"><b id="prog">۰٪</b>پیشرفت</div><div class="stat"><b id="score">۰</b>امتیاز</div><div class="stat"><b id="badges">۰</b>نشان</div><div class="stat"><b id="quizStat">—</b>آزمون</div></div></div>
+<div class="card"><h2>🗺️ نقشه ماجراجویی علمی</h2><div class="map">
+<div class="stop" onclick="show('research')"><div class="icon">🔎</div><b>دروازه پژوهش</b><small>تحقیق علمی</small></div>
+<div class="stop" onclick="show('paper')"><div class="icon">📄</div><b>جنگل کاغذ</b><small>کارخانه کاغذسازی</small></div>
+<div class="stop" onclick="show('acids')"><div class="icon">🧪</div><b>شهر اسیدها</b><small>مواد و ایمنی</small></div>
+<div class="stop" onclick="show('earth')"><div class="icon">🌋</div><b>دره زمین</b><small>زلزله، لایه‌ها و آتشفشان</small></div>
+<div class="stop" onclick="show('forces')"><div class="icon">💪</div><b>جزیره نیروها</b><small>تماسی و غیرتماسی</small></div>
+<div class="stop" onclick="show('energy')"><div class="icon">⚡</div><b>کارخانه انرژی</b><small>باتری و فنر</small></div>
+<div class="stop" onclick="show('micro')"><div class="icon">🔬</div><b>سیاره ذره‌بینی</b><small>میکروسکوپ</small></div>
+<div class="stop" onclick="show('cells')"><div class="icon">🍃</div><b>باغ سلول‌ها</b><small>برگ و سلول</small></div>
+<div class="stop" onclick="show('forest')"><div class="icon">🌳</div><b>جنگل نگهبانان</b><small>اکوسیستم و درختان بومی</small></div>
+<div class="stop" onclick="show('health')"><div class="icon">🦠</div><b>دژ سلامتی</b><small>میکروب‌ها و بیماری‌ها</small></div>
+<div class="stop" onclick="show('communication')"><div class="icon">📡</div><b>پل زمان</b><small>ارتباطات گذشته تا امروز</small></div>
+<div class="stop" onclick="show('lab')"><div class="icon">🧪</div><b>آزمایشگاه مجازی</b><small>کشف و تجربه</small></div>
+</div></div>
+<div class="notice">🎓 مسیر پیشنهادی جشنواره: معرفی نقشه → اجرای یک آزمایش مجازی → انجام یک بازی علمی → آزمون نهایی → صدور گواهی.</div>
+</section>
+
+<section id="research" class="section"><div class="card"><h2>🔎 رازهای تحقیق علمی</h2><p>یک پژوهش علمی معمولاً با پرسش آغاز می‌شود، سپس فرضیه، طراحی بررسی، جمع‌آوری داده، تحلیل و نتیجه‌گیری دنبال می‌شود.</p><div class="sim"><h3>🎮 مأموریت پژوهشگر</h3><p>کدام گزینه باید آغاز مسیر باشد؟</p><button class="choice" onclick="choice(this,false)">نتیجه‌گیری</button><button class="choice" onclick="choice(this,true)">طرح پرسش</button><button class="choice" onclick="choice(this,false)">گزارش نهایی</button><p class="feedback"></p></div><button class="primary" onclick="complete('research')">ثبت مأموریت</button></div></section>
+
+<section id="paper" class="section"><div class="card"><h2>📄 از درخت تا کاغذ</h2><p>در کارخانه کاغذسازی، مواد اولیه پس از آماده‌سازی و تبدیل به خمیر، شکل‌دهی، آب‌گیری و خشک می‌شوند. بازیافت کاغذ می‌تواند مصرف منابع طبیعی را کاهش دهد.</p><div class="grid"><div class="card">🌲 تهیه مواد اولیه</div><div class="card">🪵 آماده‌سازی و خمیرسازی</div><div class="card">📜 شکل‌دهی و آب‌گیری</div><div class="card">☀️ خشک‌کردن و آماده‌سازی</div></div><button class="primary" onclick="complete('paper')">ثبت مأموریت</button></div></section>
+
+<section id="acids" class="section"><div class="card">
+<div class="mission"><h3>🎯 مأموریت</h3>
+<p>دانش‌آموز عزیز، محتوای این بخش را با دقت بررسی کن، نکات مهم را یاد بگیر و با انجام فعالیت‌ها و پاسخ به پرسش‌ها دانسته‌هایت را محک بزن.</p></div>
+
+<h2>🧪 شهر اسیدها</h2><div class="visual">🧪 🧫 🔴🟡🟢</div>
+<p><b>شناساگر pH:</b> ماده‌ای است که با تغییر رنگ می‌تواند به شناسایی اسیدی یا بازی بودن یک ماده کمک کند. مقیاس pH برای بیان میزان اسیدی یا بازی بودن مواد به کار می‌رود.</p>
+<div class="info-grid">
+<div class="info-card"><h3>🍋 اسیدهای خوراکی</h3><p>اسیدهایی که در مواد غذایی وجود دارند؛ مثال: <b>اسید سیتریک</b> در لیمو و پرتقال و <b>اسید استیک</b> در سرکه.</p></div>
+<div class="info-card"><h3>🏭 اسیدهای صنعتی</h3><p>اسیدهایی که در صنعت کاربرد دارند؛ مثال: <b>اسید سولفوریک</b> و <b>اسید کلریدریک</b>.</p></div></div>
+<table class="data"><tr><th>ماده</th><th>نوع</th><th>مثال</th></tr>
+<tr><td>آب‌لیمو</td><td>خوراکی</td><td>دارای اسید سیتریک</td></tr>
+<tr><td>سرکه</td><td>خوراکی</td><td>دارای اسید استیک</td></tr>
+<tr><td>اسید سولفوریک</td><td>صنعتی</td><td>کاربرد صنعتی و باتری‌های سربی</td></tr>
+<tr><td>اسید کلریدریک</td><td>صنعتی</td><td>کاربرد در برخی فرایندهای صنعتی</td></tr></table>
+<div class="sim"><h3>🎮 شناساگر مجازی</h3><button onclick="acid('لیمو')">🍋 آب‌لیمو</button><button onclick="acid('آب')">💧 آب</button><button onclick="acid('صابون')">🧼 محلول صابون</button><p id="acidOut"></p></div>
+</div></section>
+
+<section id="earth" class="section"><div class="card">
+<div class="mission"><h3>🎯 مأموریت</h3>
+<p>دانش‌آموز عزیز، محتوای این بخش را با دقت بررسی کن، نکات مهم را یاد بگیر و با انجام فعالیت‌ها و پاسخ به پرسش‌ها دانسته‌هایت را محک بزن.</p></div>
+
+<h2>🌍 زمین لرزان و آتشفشان</h2><div class="visual">🌍 🌋</div>
+<p>زلزله با آزاد شدن ناگهانی انرژی درون زمین همراه است و انرژی آن به شکل امواج لرزه‌ای منتشر می‌شود.</p>
+<h3>لایه‌های پنج‌گانه زمین</h3>
+<div class="layer-list">
+<div class="layer-item"><b>🟤 خمیرکره (سست‌کره)</b><br>ویژگی: داغ و نرم و خمیری؛ ضخامت: حدود ۲۵۰ کیلومتر؛ محل: زیر سنگ‌کره در بخش بالایی گوشته.</div>
+<div class="layer-item"><b>🟠 سنگ‌کره</b><br>ویژگی: سخت و جامد و شامل پوسته و بخش بالایی گوشته؛ ضخامت: حدود ۱۰۰ کیلومتر؛ محل: بیرونی‌ترین لایه سخت زمین.</div>
+<div class="layer-item"><b>🟡 گوشته زیرین</b><br>ویژگی: بسیار داغ و تحت فشار زیاد؛ ضخامت: حدود ۲۲۰۰ کیلومتر؛ محل: زیر خمیرکره و بالای هسته.</div>
+<div class="layer-item"><b>🔴 هسته خارجی</b><br>ویژگی: عمدتاً مایع و فلزی؛ ضخامت: حدود ۲۲۰۰ کیلومتر؛ محل: بین گوشته زیرین و هسته داخلی.</div>
+<div class="layer-item"><b>🔵 هسته داخلی</b><br>ویژگی: بسیار داغ، پرفشار و عمدتاً جامد؛ ضخامت: حدود ۱۲۲۰ کیلومتر؛ محل: مرکز زمین.</div>
+</div><p class="notice">📌 اندازه‌های ضخامت تقریبی و برای نمایش آموزشی گرد شده‌اند.</p>
+</div></section>
+
+<section id="forces" class="section"><div class="card">
+<div class="mission"><h3>🎯 مأموریت</h3>
+<p>دانش‌آموز عزیز، محتوای این بخش را با دقت بررسی کن، نکات مهم را یاد بگیر و با انجام فعالیت‌ها و پاسخ به پرسش‌ها دانسته‌هایت را محک بزن.</p></div>
+
+<h2>💪 فرمانروایان نیرو</h2><div class="visual">🤝 🧲 🌍 ✈️</div>
+<p><b>دو نوع کلی نیرو:</b> نیروهای <b>تماسی</b> با تماس مستقیم اثر می‌گذارند؛ نیروهای <b>غیرتماسی</b> بدون تماس مستقیم اثر می‌گذارند.</p>
+<div class="info-grid">
+<div class="info-card"><h3>🪵 نیروی اصطکاک</h3><p>در برابر حرکت نسبی دو سطح مقاومت می‌کند. مثال: اصطکاک کف کفش با زمین.</p></div>
+<div class="info-card"><h3>🌬️ مقاومت هوا</h3><p>هوا در برابر حرکت جسم مقاومت می‌کند. مثال: چتر نجات.</p></div>
+<div class="info-card"><h3>🌍 نیروی گرانشی</h3><p>نیروی کشش بین جرم‌هاست. مثال: افتادن توپ به سمت زمین.</p></div>
+<div class="info-card"><h3>⚡ نیروی الکتریکی</h3><p>نیروی جاذبه یا دافعه بین بارهای الکتریکی است. مثال: جذب کاغذ به بادکنک باردار.</p></div>
+<div class="info-card"><h3>🧲 نیروی مغناطیسی</h3><p>نیروی آهن‌ربا بر برخی مواد یا آهن‌ربای دیگر است. مثال: جذب میخ آهنی.</p></div>
+<div class="info-card"><h3>🧮 نیروی خالص</h3><p>برآیند همه نیروهای وارد بر جسم است؛ نیروهای هم‌جهت جمع و نیروهای خلاف جهت تفاضل می‌شوند.</p></div>
+<div class="info-card"><h3>✈️ نیروی بالابری</h3><p>نیروی رو به بالایی است که بر اثر جریان هوا بر بال هواپیما ایجاد می‌شود و به ماندن هواپیما در هوا کمک می‌کند.</p></div>
+</div></div></section>
+
+<section id="energy" class="section"><div class="card">
+<h2>⚡ انرژی و شکل‌های آن</h2><div class="visual">⚡ 🔋 🍞 ⛽ 🪀 💧🏞️ 💡</div>
+<div class="mission"><h3>🎯 مأموریت</h3>
+<p>در این بخش با مفهوم انرژی و چند شکل مهم انرژی آشنا می‌شوی و یاد می‌گیری انرژی ذخیره‌شده چگونه می‌تواند به شکل‌های دیگر انرژی تبدیل شود.</p></div>
+<h3>🔋 انرژی چیست؟</h3>
+<p><b>انرژی</b> توانایی انجام کار و ایجاد تغییر است. انرژی می‌تواند از شکلی به شکل دیگر تبدیل شود.</p>
+<div class="info-grid">
+<div class="info-card"><h3>🥖 انرژی شیمیایی</h3><p>در مواد غذایی، باتری‌ها و سوخت‌ها انرژی شیمیایی ذخیره شده است. بدن ما انرژی شیمیایی مواد غذایی را برای انجام فعالیت‌هایش مصرف می‌کند و باتری نیز انرژی شیمیایی را به انرژی الکتریکی تبدیل می‌کند.</p></div>
+<div class="info-card"><h3>🪀 انرژی کشسانی</h3><p>در اجسام کشسانی که کشیده یا فشرده شده‌اند انرژی ذخیره می‌شود؛ مانند فنر در اسباب‌بازی‌های کوکی که با فشرده یا کشیده شدن، انرژی ذخیره می‌کند و هنگام رها شدن می‌تواند اسباب‌بازی را به حرکت درآورد.</p></div>
+<div class="info-card"><h3>💧 انرژی ذخیره‌شده در آب پشت سد</h3><p>آب ذخیره‌شده در ارتفاع پشت سد دارای انرژی پتانسیل گرانشی است. هنگام حرکت آب، این انرژی به انرژی حرکتی تبدیل می‌شود و توربین را می‌چرخاند؛ سپس <b>مولد (ژنراتور)</b> این انرژی مکانیکی را به انرژی الکتریکی تبدیل می‌کند.</p></div>
+<div class="info-card"><h3>⛽ سوخت‌ها</h3><p>سوخت‌هایی مانند بنزین و گازوئیل دارای انرژی شیمیایی هستند که هنگام سوختن آزاد می‌شود و می‌تواند به شکل‌های دیگری از انرژی تبدیل شود.</p></div>
+<div class="info-card"><h3>📏 یکای انرژی</h3><p>یکای انرژی در دستگاه بین‌المللی SI، <b>ژول (J)</b> است.</p></div>
+</div>
+<h3>🔄 چند نمونه تبدیل انرژی</h3>
+<table class="data"><tr><th>نمونه</th><th>تبدیل انرژی</th></tr>
+<tr><td>🔋 باتری</td><td>انرژی شیمیایی → انرژی الکتریکی</td></tr>
+<tr><td>🍞 مواد غذایی</td><td>انرژی شیمیایی → انرژی مورد استفاده بدن برای حرکت و فعالیت</td></tr>
+<tr><td>🪀 اسباب‌بازی کوکی</td><td>انرژی کشسانی ذخیره‌شده در فنر → انرژی حرکتی</td></tr>
+<tr><td>🏞️ نیروگاه برق‌آبی</td><td>انرژی پتانسیل گرانشی آب → انرژی حرکتی → انرژی مکانیکی توربین → انرژی الکتریکی</td></tr>
+</table>
+</div></section>
+
+<section id="micro" class="section"><div class="card">
+<div class="mission"><h3>🎯 مأموریت</h3>
+<p>دانش‌آموز عزیز، محتوای این بخش را با دقت بررسی کن، نکات مهم را یاد بگیر و با انجام فعالیت‌ها و پاسخ به پرسش‌ها دانسته‌هایت را محک بزن.</p></div>
+
+<h2>🔬 پنجره‌ای به جهان ریز</h2><div class="visual">🔬 🧫</div>
+<p>میکروسکوپ با کمک عدسی‌ها امکان مشاهده بزرگ‌نمایی‌شده اجسام بسیار ریز را فراهم می‌کند.</p>
+<h3>اجزای اصلی میکروسکوپ</h3>
+<div class="microscope-diagram"><div class="mic-eyepiece">چشمی</div><div class="mic-objective">عدسی شیئی</div><div class="mic-stage">صفحه نمونه</div><div class="mic-light">منبع نور</div><div class="mic-base">پایه</div><div class="mic-body">🔬</div></div>
+<div class="info-grid"><div class="info-card"><b>نحوه تنظیم:</b><br>۱) روی سطح صاف قرار بده. ۲) نمونه را ثابت کن. ۳) با عدسی کم‌قدرت شروع کن. ۴) با پیچ تنظیم درشت تصویر را پیدا کن. ۵) با پیچ تنظیم ظریف واضح کن. ۶) در صورت نیاز بزرگنمایی را بیشتر کن و دوباره تنظیم ظریف انجام بده.</div>
+<div class="info-card"><b>ایمنی:</b><br>عدسی‌ها را لمس نکن و هنگام جابه‌جایی، میکروسکوپ را با دو دست حمل کن.</div></div>
+<div class="sim"><h3>🎮 مشاهده مجازی</h3><div id="microView" class="micro"></div><select onchange="sample(this.value)"><option value="leaf">سلول برگ</option><option value="onion">سلول پیاز</option><option value="animal">سلول جانوری</option></select><input type="range" min="1" max="5" value="2" oninput="zoom(this.value)"><p id="microOut">بزرگنمایی: ۲×</p></div>
+</div></section>
+
+<section id="cells" class="section"><div class="card">
+<div class="mission"><h3>🎯 مأموریت</h3>
+<p>دانش‌آموز عزیز، محتوای این بخش را با دقت بررسی کن، نکات مهم را یاد بگیر و با انجام فعالیت‌ها و پاسخ به پرسش‌ها دانسته‌هایت را محک بزن.</p></div>
+
+<h2>🍃 شگفتی‌های برگ</h2><div class="visual">🍃 ☀️ 🧪 🍄</div>
+<div class="info-grid">
+<div class="info-card"><h3>🟣 چگونه به وجود نشاسته در برگ پی می‌بریم؟</h3><p>با استفاده از محلول ید می‌توان وجود نشاسته را بررسی کرد. بخش‌های دارای نشاسته به رنگ آبی تیره یا آبی-سیاه درمی‌آیند؛ این آزمایش نشان می‌دهد که برگ در فتوسنتز نشاسته تولید کرده است.</p></div>
+<div class="info-card"><h3>🍄 قارچ‌ها و کپک مواد غذایی</h3><p>برخی قارچ‌ها مانند کپک‌ها روی مواد غذایی رشد می‌کنند و باعث فساد آن‌ها می‌شوند؛ غذای کپک‌زده را نباید مصرف کرد.</p></div>
+<div class="info-card"><h3>🌱 سلول گیاهی</h3><p>دیواره سلولی، واکوئل بزرگ و در سلول‌های فتوسنتزکننده کلروپلاست دارد.</p></div>
+</div></div></section>
+
+<section id="forest" class="section"><div class="card">
+<div class="mission"><h3>🎯 مأموریت</h3>
+<p>دانش‌آموز عزیز، محتوای این بخش را با دقت بررسی کن، نکات مهم را یاد بگیر و با انجام فعالیت‌ها و پاسخ به پرسش‌ها دانسته‌هایت را محک بزن.</p></div>
+
+<h2>🌳 جنگل برای کیست؟</h2><div class="visual">🌳 🐇 🦊 🍄 ☀️</div><p>جنگل یک اکوسیستم طبیعی است و جانداران و عوامل غیرزنده در آن با یکدیگر ارتباط دارند.</p>
+<div class="info-grid">
+<div class="info-card"><h3>🔗 زنجیره غذایی</h3><p>رابطه تغذیه‌ای ساده بین جانداران است. مثال: <b>گیاه → ملخ → قورباغه → مار</b>.</p></div>
+<div class="info-card"><h3>🕸️ شبکه غذایی</h3><p>چند زنجیره غذایی به هم پیوسته است. مثال: گیاهان غذای ملخ و خرگوش‌اند و مار می‌تواند از چند جانور تغذیه کند.</p></div>
+<div class="info-card"><h3>🌲 درختان بومی</h3><p>درختانی هستند که به‌طور طبیعی در یک منطقه وجود دارند و با شرایط محیطی همان منطقه سازگارند.</p></div>
+<div class="info-card"><h3>🦁 انقراض شیر ایرانی</h3><p>شکار بی‌رویه، از بین رفتن زیستگاه و کاهش طعمه‌ها از عوامل اصلی انقراض شیر ایرانی در ایران بودند.</p></div>
+</div></div></section>
+
+<section id="health" class="section"><div class="card">
+<div class="mission"><h3>🎯 مأموریت</h3>
+<p>دانش‌آموز عزیز، محتوای این بخش را با دقت بررسی کن، نکات مهم را یاد بگیر و با انجام فعالیت‌ها و پاسخ به پرسش‌ها دانسته‌هایت را محک بزن.</p></div>
+
+<h2>🛡️ دژ سلامتی</h2><div class="visual">🛡️ 🦠 🧬 ⚪</div><h3>سدهای دفاعی بدن</h3>
+<div class="info-grid">
+<div class="info-card"><h3>🧴 پوست</h3><p>پوست یک سد فیزیکی است و از ورود بسیاری از میکروب‌ها به بدن جلوگیری می‌کند.</p></div>
+<div class="info-card"><h3>⚪ گلبول‌های سفید</h3><p>بخشی از دستگاه دفاعی بدن‌اند و با شناسایی و مقابله با عوامل بیماری‌زا از بدن دفاع می‌کنند.</p></div>
+<div class="info-card"><h3>🦠 میکروب</h3><p>در زبان عمومی به جانداران یا عوامل بسیار ریزی گفته می‌شود که با چشم دیده نمی‌شوند؛ برخی بیماری‌زا هستند.</p></div>
+<div class="info-card"><h3>🧬 ویروس</h3><p>عامل بسیار ریزی است که برای تکثیر به سلول زنده نیاز دارد و برخی ویروس‌ها بیماری ایجاد می‌کنند.</p></div>
+<div class="info-card"><h3>🐕 هاری</h3><p>بیماری ویروسی خطرناکی است که معمولاً از راه گازگرفتگی یا تماس بزاق حیوان آلوده با زخم منتقل می‌شود؛ در صورت گازگرفتگی حیوان مشکوک باید فوراً به مرکز درمانی مراجعه کرد.</p></div>
+</div></div></section>
+
+<section id="communication" class="section"><div class="card">
+<div class="mission"><h3>🎯 مأموریت</h3>
+<p>دانش‌آموز عزیز، محتوای این بخش را با دقت بررسی کن، نکات مهم را یاد بگیر و با انجام فعالیت‌ها و پاسخ به پرسش‌ها دانسته‌هایت را محک بزن.</p></div>
+
+<h2>📡 پل‌های ارتباطی</h2><div class="visual">💻 🌐 🔒 📱</div><p>روش‌های ارتباطی از نامه و تلگراف تا تلفن، رادیو، تلویزیون و اینترنت تغییر کرده‌اند.</p>
+<h3>نکات ایمنی هنگام کار با اینترنت و رایانه</h3>
+<div class="info-grid"><div class="info-card">🔑 رمز عبور قوی و متفاوت انتخاب کن.</div><div class="info-card">🕵️ اطلاعات شخصی و رمز عبور را به افراد ناشناس نده.</div><div class="info-card">🔗 روی لینک‌ها و فایل‌های ناشناس کلیک یا دانلود نکن.</div><div class="info-card">🛡️ سیستم‌عامل و نرم‌افزارهای امنیتی را به‌روز نگه دار.</div><div class="info-card">📶 در شبکه‌های عمومی با احتیاط وارد حساب‌های مهم شو.</div><div class="info-card">💬 اطلاعات یا عکس خصوصی را با افراد ناشناس به اشتراک نگذار.</div></div>
+<div class="timeline"><div class="time">✉️ نامه</div><div class="time">⚡ تلگراف</div><div class="time">☎️ تلفن</div><div class="time">📻 رادیو</div><div class="time">📺 تلویزیون</div><div class="time">🌐 اینترنت</div></div>
+</div></section>
+
+<section id="lab" class="section"><div class="card"><h2>🧪 آزمایشگاه مجازی</h2><p>این بخش برای شبیه‌سازی آموزشی است و جایگزین آزمایش عملی با نظارت معلم نیست.</p><div class="sim"><h3>🔋 طرز کار باتری</h3><p>در باتری، واکنش‌های شیمیایی باعث ایجاد اختلاف پتانسیل می‌شوند و مدار بسته می‌تواند جریان الکتریکی داشته باشد.</p><button onclick="battery(true)">مدار بسته</button><button onclick="battery(false)">مدار باز</button><p id="batteryOut"></p></div><div class="sim"><h3>🌳 اکوسیستم تعاملی</h3><p>تولیدکننده، مصرف‌کننده و عامل غیرزنده را انتخاب کن و اثر ارتباط آن‌ها را بررسی کن.</p><p class="notice">مثال: نور → گیاه → جانور؛ تجزیه‌کنندگان مواد باقی‌مانده را به چرخه مواد بازمی‌گردانند.</p></div></div></section>
+
+<section id="quiz" class="section"><div class="card"><h2>🎯 آزمون نهایی پژوهشگر کوچک</h2><p>برای هر سؤال یک پاسخ انتخاب کن.</p>
+<div class="sim"><b>۱. آغاز یک تحقیق علمی چیست؟</b><br><label><input type="radio" name="q1" value="a"> طرح پرسش</label><label><input type="radio" name="q1" value="b"> نتیجه‌گیری</label></div>
+<div class="sim"><b>۲. کدام نیرو غیرتماسی است؟</b><br><label><input type="radio" name="q2" value="a"> هل دادن</label><label><input type="radio" name="q2" value="b"> گرانش</label></div>
+<div class="sim"><b>۳. انرژی ذخیره‌شده در فنر کشیده چیست؟</b><br><label><input type="radio" name="q3" value="a"> انرژی کشسانی</label><label><input type="radio" name="q3" value="b"> انرژی نورانی</label></div>
+<div class="sim"><b>۴. کدام مورد به حفظ سلامت کمک می‌کند؟</b><br><label><input type="radio" name="q4" value="a"> رعایت بهداشت</label><label><input type="radio" name="q4" value="b"> بی‌توجهی به علائم بیماری</label></div>
+<div class="sim"><b>۵. کدام مورد یک عامل غیرزنده اکوسیستم است؟</b><br><label><input type="radio" name="q5" value="a"> نور</label><label><input type="radio" name="q5" value="b"> خرگوش</label></div>
+<div class="sim"><b>۶. میکروسکوپ چه کاری انجام می‌دهد؟</b><br><label><input type="radio" name="q6" value="a"> بزرگ‌نمایی اجسام بسیار ریز</label><label><input type="radio" name="q6" value="b"> تولید برق</label></div>
+<div class="sim"><b>۷. در باتری چه تبدیلی رخ می‌دهد؟</b><br><label><input type="radio" name="q7" value="a"> شیمیایی به الکتریکی</label><label><input type="radio" name="q7" value="b"> الکتریکی به شیمیایی فقط</label></div>
+<div class="sim"><b>۸. کدام مورد نمونه‌ای از وسیله ارتباطی امروزی است؟</b><br><label><input type="radio" name="q8" value="a"> اینترنت</label><label><input type="radio" name="q8" value="b"> پیک نامه‌رسان</label></div>
+<button class="primary" onclick="grade()">محاسبه نتیجه</button><p id="quizOut" class="notice"></p></div></section>
+
+<section id="refs" class="section"><div class="card"><h2>📚 منابع</h2><div class="visual">📖</div><ul><li>کتاب علوم تجربی پایه ششم دبستان</li></ul></div></section>
+
+<section id="cert" class="section"><div class="card"><h2>📜 گواهی پایان سفر علمی</h2><p>نام را وارد کن و گواهی دیجیتال خودت را بساز.</p><div class="fields"><input id="certName" placeholder="نام پژوهشگر"><input id="certSchool" placeholder="نام مدرسه"></div><button class="primary" onclick="certificate()">صدور گواهی</button><div id="certBox" class="cert"><h2>🏆 گواهی پایان سفر</h2><p>بدین‌وسیله گواهی می‌شود</p><div id="certNameOut" class="certname"></div><p>با موفقیت در پروژه «سفر شگفت‌انگیز به سرزمین علوم» شرکت کرده است.</p><p id="certSchoolOut"></p><p id="certScoreOut"></p>🌟 🔬 🌍 🧪 🌳</div></div></section>
+</main>
+<script>
+let score=0,done=new Set(),quizScore=null,ecoSet=new Set();
+const ids=['research','paper'];
+function show(id){document.querySelectorAll('.section').forEach(x=>x.classList.remove('active'));document.getElementById(id).classList.add('active');scrollTo(0,0)}
+function update(){document.getElementById('score').textContent=score;document.getElementById('badges').textContent=done.size;document.getElementById('prog').textContent=Math.round(done.size/ids.length*100)+'%'}
+function complete(id){if(!done.has(id)){done.add(id);score+=10;update();alert('مأموریت ثبت شد و ۱۰ امتیاز گرفتی! 🏆')}}
+function choice(b,ok){b.parentElement.querySelectorAll('button').forEach(x=>x.classList.remove('primary'));b.classList.add('primary');b.nextElementSibling;if(b.parentElement.querySelector('.feedback'))b.parentElement.querySelector('.feedback').textContent=ok?'آفرین! پاسخ درست است 🌟':'دوباره فکر کن.'}
+function acid(x){document.getElementById('acidOut').textContent=x==='لیمو'?'آب‌لیمو خاصیت اسیدی دارد.':x==='آب'?'آب خالص در حالت ایده‌آل خنثی در نظر گرفته می‌شود.':'محلول‌های صابونی معمولاً خاصیت بازی دارند.'}
+function layer(x){document.getElementById('layerOut').textContent=x}
+function spring(v){document.getElementById('spring').style.transform='scaleX('+(0.7+v/7)+')';document.getElementById('springOut').textContent='میزان تغییر شکل فنر: '+v+' — با تغییر شکل بیشتر، انرژی کشسانی ذخیره‌شده بیشتر می‌شود.'}
+function sample(v){let m=document.getElementById('microView');m.style.background=v==='leaf'?'radial-gradient(circle,#d9f2d0 0 20%,#8fcf91 21% 30%,#f0d6a0 31% 45%,#d7ebf7 46%)':v==='onion'?'radial-gradient(circle,#fff 0 20%,#e6c8e8 21% 35%,#d5eaf4 36% 55%,#f8efd0 56%)':'radial-gradient(circle,#f3c8c8 0 25%,#d9a1a1 26% 40%,#d8eaf3 41% 65%,#eee 66%)'}
+function zoom(v){document.getElementById('microView').style.transform='scale('+(0.8+v*.15)+')';document.getElementById('microOut').textContent='بزرگنمایی: '+v+'×'}
+function eco(el,t){el.classList.toggle('sel');ecoSet.has(t)?ecoSet.delete(t):ecoSet.add(t)}
+function checkEco(){document.getElementById('ecoOut').textContent=ecoSet.has('p')&&ecoSet.has('c')&&ecoSet.has('a')?'اکوسیستم پایه را درست ساختی! 🌳':'حداقل تولیدکننده، مصرف‌کننده و عامل غیرزنده را انتخاب کن.'}
+function health(b,ok){document.getElementById('healthOut').textContent=ok?'درست است؛ آنفلوانزا بیماری واگیردار است.':'در این دسته‌بندی، این مورد غیرواگیردار است.'}
+function battery(closed){document.getElementById('batteryOut').textContent=closed?'مدار بسته است و جریان الکتریکی می‌تواند برقرار شود.':'مدار باز است و جریان پیوسته برقرار نمی‌شود.'}
+function grade(){let ans={q1:'a',q2:'b',q3:'a',q4:'a',q5:'a',q6:'a',q7:'a',q8:'a'},s=0;for(let q in ans){let x=document.querySelector('input[name="'+q+'"]:checked');if(x&&x.value===ans[q])s++}quizScore=s;score+=s*5;document.getElementById('quizOut').textContent='نتیجه: '+s+' از ۸ — '+(s>=7?'عالی! 🌟':s>=5?'خیلی خوب!':'دوباره ایستگاه‌ها را مرور کن.');document.getElementById('quizStat').textContent=s+'/۸';update()}
+function certificate(){let n=document.getElementById('certName').value||document.getElementById('student').value||'پژوهشگر کوچک',s=document.getElementById('certSchool').value||document.getElementById('school').value;document.getElementById('certNameOut').textContent=n;document.getElementById('certSchoolOut').textContent=s?'مدرسه: '+s:'';document.getElementById('certScoreOut').textContent='امتیاز ثبت‌شده: '+score;document.getElementById('certBox').style.display='block'}
+update()
+</script>
+</body></html>
